@@ -12,12 +12,7 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+            <h3 class="font-bold text-center">Create your account</h3>
 
             <!-- Email Address -->
             <div class="mt-4">
@@ -25,6 +20,22 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
+
+            <!-- First Name -->
+            <div>
+                <x-label for="fname" :value="__('First Name')" />
+
+                <x-input id="fname" class="block mt-1 w-full" type="text" name="fname" :value="old('fname')" required autofocus />
+            </div>
+
+            <!-- Last Name -->
+            <div>
+                <x-label for="lname" :value="__('Last Name')" />
+
+                <x-input id="lname" class="block mt-1 w-full" type="text" name="lname" :value="old('lname')" required autofocus />
+            </div>            
+
+
 
             <!-- Password -->
             <div class="mt-4">
@@ -45,14 +56,16 @@
                                 name="password_confirmation" required />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already have an account? Login') }}
-                </a>
-
-                <x-button class="ml-4">
+            <div class="items-center  mt-4">
+               <x-button>
                     {{ __('Register') }}
                 </x-button>
+            </div>
+
+            <div class="items-center text-center mt-4">
+                <a class="underline text-sm text-blue-400 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already have an account? Login') }}
+                </a>
             </div>
         </form>
     </x-auth-card>

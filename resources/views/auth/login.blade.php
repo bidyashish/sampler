@@ -15,6 +15,8 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
+            <h3 class="font-bold text-center">Login</h3>
+
             <!-- Email Address -->
             <div>
                 <x-label for="email" :value="__('Email')" />
@@ -35,22 +37,23 @@
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-500 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
+            <div class="  items-center  mt-4">
+               <x-button>
+                    {{ __('Login') }}
                 </x-button>
             </div>
+
+            <div class="items-center text-center mt-4">
+                <a class="underline text-sm text-blue-400 hover:text-gray-900" href="{{ route('register') }}">
+                    {{ __('Don\'t have an account? Register') }}
+                </a>
+            </div>
+
         </form>
     </x-auth-card>
 </x-guest-layout>
