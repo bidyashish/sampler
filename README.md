@@ -13,7 +13,7 @@
 
 First Clone the project
 ```bash
-git clone hhttps://github.com/bidyashish/sampler.git
+git clone https://github.com/bidyashish/sampler.git
 ```
 
 Checkout to master branch 
