@@ -56,7 +56,7 @@ Require PHP 7.3X + version and Node 12.X + is installed | check node is installe
 node -v && php -v
 ```
 
-Browse Web application at `localhost` in local machine.
+Browse Web application at `http://localhost` in local machine.
 
 ---
 ### GET Request Task
