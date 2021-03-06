@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AllUserController extends Controller
 {
@@ -26,21 +27,13 @@ class AllUserController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'fname' => 'required|string|max:255',
-            'lname' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|confirmed|min:8',
-        ]);
+        $balance = User::find($request->receiverid);
+        $balance->balance += $request->amount;
+        $balance->save();
 
-        Auth::login($user = User::create([
-            'fname' => $request->fname,
-            'lname' => $request->lname,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]));
-
-        event(new Registered($user));
+        $balance = User::find($request->senderid);
+        $balance->balance -= $request->amount;
+        $balance->save();
 
         return redirect(RouteServiceProvider::HOME);
     }

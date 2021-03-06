@@ -32,3 +32,21 @@ table.userlist th {
   --tw-bg-opacity: 1;
   background-color: #FAFAFA;
 }
+
+.modal-logo {
+  margin-left:7rem;
+  /* margin-bottom: 4rem; */
+}
+
+.modal-sender {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.mybalance {
+  font-size: 3.2rem;
+  color: #4DC0B9;
+}
+
+main {
+  background-color: #FAFAFA;
+}
