@@ -31609,16 +31609,35 @@ select {
           animation: bounce 1s infinite;
 }
 
-table {
+table.userlist {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-td, th {
+table.userlist td,
+table.userlist th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+
+.text-grey {
+  color: #A0A0A0;
+}
+
+.text-profile-display {
+  color: #4e4e4e;
+  font-size: 1.5rem;
+}
+
+/* .modal-color {
+  color: #FAFAFA
+} */
+
+.modal-color {
+  --tw-bg-opacity: 1;
+  background-color: #FAFAFA;
 }
 
 @media (min-width: 640px) {

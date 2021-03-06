@@ -66,3 +66,5 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 Route::get('/dashboard', [AllUserController::class, 'index'])
                 ->middleware('auth')
                 ->name('dashboard');
+Route::post('/dashboard', [AllUserController::class, 'store'])
+                ->middleware('guest');

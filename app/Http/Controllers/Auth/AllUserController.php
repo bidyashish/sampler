@@ -23,4 +23,25 @@ class AllUserController extends Controller
 
         return view('dashboard', compact('users'));
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'fname' => 'required|string|max:255',
+            'lname' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|confirmed|min:8',
+        ]);
+
+        Auth::login($user = User::create([
+            'fname' => $request->fname,
+            'lname' => $request->lname,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]));
+
+        event(new Registered($user));
+
+        return redirect(RouteServiceProvider::HOME);
+    }
 }
