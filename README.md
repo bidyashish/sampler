@@ -11,6 +11,15 @@
 
 ### Getting Started 
 
+Prerequisites:
+1. PHP 7.3X+
+2. Mysql database
+3. Composer (PHP)
+4. Node 12.0X+ & NPM
+5. Apache, Nginx or IIS (with Fast CGI) server
+6. Docker (optional but recomended)
+
+
 First Clone the project
 ```bash
 git clone https://github.com/bidyashish/sampler.git
@@ -40,16 +49,28 @@ Run Database migration using
 php artisan migrate
 ```
 
-Quick Step to run web application is to use Docker
+Easy step for getting started is to use Docker
+
+Run command inside project folder
 
 ```
+// To check docker version
+docker -v  
+
+// local build
+
 docker compose up
 ```
 
 
 
 
-Traditional method
+Other traditional method
+
+1. Configure PHP & MySQL
+2. Set project in any server (NGINX, Apache or IIS) on port 80
+3. Download  Composer and
+
 
 Require PHP 7.3X + version and Node 12.X + is installed | check node is installed or get latest NODE at https://nodejs.org/en/download/
 ```bash
