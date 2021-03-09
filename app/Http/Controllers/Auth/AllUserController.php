@@ -20,7 +20,7 @@ class AllUserController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::all();
+        $users = User::all()->except(Auth::id());
 
         return view('dashboard', compact('users'));
     }

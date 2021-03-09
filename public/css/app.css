@@ -31659,6 +31659,10 @@ main {
   background-color: #FAFAFA;
 }
 
+input#amount {
+  padding-left: 29px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

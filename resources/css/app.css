@@ -50,3 +50,7 @@ table.userlist th {
 main {
   background-color: #FAFAFA;
 }
+
+input#amount {
+  padding-left: 29px;
+}
